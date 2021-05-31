@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Google Clubs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <style id="erd_scroll_detection_scrollbar_style">
+        /* Created by the element-resize-detector library. */
+        .erd_scroll_detection_container>div::-webkit-scrollbar {
+            display: none;
+        }
+
+        .erd_scroll_detection_container_animation_active {
+            -webkit-animation-duration: 0.1s;
+            animation-duration: 0.1s;
+            -webkit-animation-name: erd_scroll_detection_container_animation;
+            animation-name: erd_scroll_detection_container_animation;
+        }
+
+        @-webkit-keyframes erd_scroll_detection_container_animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes erd_scroll_detection_container_animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="MuiTouchRipple">
+        .MuiTouchRipple-root {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+            position: absolute;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        .MuiTouchRipple-ripple {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .MuiTouchRipple-rippleVisible {
+            opacity: 0.3;
+            animation: MuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+        }
+
+        .MuiTouchRipple-ripplePulsate {
+            animation-duration: 200ms;
+        }
+
+        .MuiTouchRipple-child {
+            width: 100%;
+            height: 100%;
+            display: block;
+            opacity: 1;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+
+        .MuiTouchRipple-childLeaving {
+            opacity: 0;
+            animation: MuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .MuiTouchRipple-childPulsate {
+            top: 0;
+            left: 0;
+            position: absolute;
+            animation: MuiTouchRipple-keyframes-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+        }
+
+        @-webkit-keyframes MuiTouchRipple-keyframes-enter {
+            0% {
+                opacity: 0.1;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes MuiTouchRipple-keyframes-exit {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes MuiTouchRipple-keyframes-pulsate {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.92);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="MuiButtonBase">
+        .MuiButtonBase-root {
+            color: inherit;
+            border: 0;
+            cursor: pointer;
+            margin: 0;
+            display: inline-flex;
+            outline: 0;
+            padding: 0;
+            position: relative;
+            align-items: center;
+            user-select: none;
+            border-radius: 0;
+            vertical-align: middle;
+            -moz-appearance: none;
+            justify-content: center;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .MuiButtonBase-root::-moz-focus-inner {
+            border-style: none;
+        }
+
+        .MuiButtonBase-root.Mui-disabled {
+            cursor: default;
+            pointer-events: none;
+        }
+
+        @media print {
+            .MuiButtonBase-root {
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="MuiButton">
+        .MuiButton-root {
+            color: rgba(0, 0, 0, 0.87);
+            padding: 6px 16px;
+            font-size: 0.875rem;
+            min-width: 64px;
+            box-sizing: border-box;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            line-height: 1.75;
+            border-radius: 4px;
+            letter-spacing: 0.02857em;
+            text-transform: uppercase;
+        }
+
+        .MuiButton-root:hover {
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        .MuiButton-root.Mui-disabled {
+            color: rgba(0, 0, 0, 0.26);
+        }
+
+        @media (hover: none) {
+            .MuiButton-root:hover {
+                background-color: transparent;
+            }
+        }
+
+        .MuiButton-root:hover.Mui-disabled {
+            background-color: transparent;
+        }
+
+        .MuiButton-label {
+            width: 100%;
+            display: inherit;
+            align-items: inherit;
+            justify-content: inherit;
+        }
+
+        .MuiButton-text {
+            padding: 6px 8px;
+        }
+
+        .MuiButton-textPrimary {
+            color: #3f51b5;
+        }
+
+        .MuiButton-textPrimary:hover {
+            background-color: rgba(63, 81, 181, 0.04);
+        }
+
+        @media (hover: none) {
+            .MuiButton-textPrimary:hover {
+                background-color: transparent;
+            }
+        }
+
+        .MuiButton-textSecondary {
+            color: #f50057;
+        }
+
+        .MuiButton-textSecondary:hover {
+            background-color: rgba(245, 0, 87, 0.04);
+        }
+
+        @media (hover: none) {
+            .MuiButton-textSecondary:hover {
+                background-color: transparent;
+            }
+        }
+
+        .MuiButton-outlined {
+            border: 1px solid rgba(0, 0, 0, 0.23);
+            padding: 5px 15px;
+        }
+
+        .MuiButton-outlined.Mui-disabled {
+            border: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .MuiButton-outlinedPrimary {
+            color: #3f51b5;
+            border: 1px solid rgba(63, 81, 181, 0.5);
+        }
+
+        .MuiButton-outlinedPrimary:hover {
+            border: 1px solid #3f51b5;
+            background-color: rgba(63, 81, 181, 0.04);
+        }
+
+        @media (hover: none) {
+            .MuiButton-outlinedPrimary:hover {
+                background-color: transparent;
+            }
+        }
+
+        .MuiButton-outlinedSecondary {
+            color: #f50057;
+            border: 1px solid rgba(245, 0, 87, 0.5);
+        }
+
+        .MuiButton-outlinedSecondary:hover {
+            border: 1px solid #f50057;
+            background-color: rgba(245, 0, 87, 0.04);
+        }
+
+        .MuiButton-outlinedSecondary.Mui-disabled {
+            border: 1px solid rgba(0, 0, 0, 0.26);
+        }
+
+        @media (hover: none) {
+            .MuiButton-outlinedSecondary:hover {
+                background-color: transparent;
+            }
+        }
+
+        .MuiButton-contained {
+            color: rgba(0, 0, 0, 0.87);
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            background-color: #e0e0e0;
+        }
+
+        .MuiButton-contained:hover {
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            background-color: #d5d5d5;
+        }
+
+        .MuiButton-contained.Mui-focusVisible {
+            box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        .MuiButton-contained:active {
+            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+        }
+
+        .MuiButton-contained.Mui-disabled {
+            color: rgba(0, 0, 0, 0.26);
+            box-shadow: none;
+            background-color: rgba(0, 0, 0, 0.12);
+        }
+
+        @media (hover: none) {
+            .MuiButton-contained:hover {
+                box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+                background-color: #e0e0e0;
+            }
+        }
+
+        .MuiButton-contained:hover.Mui-disabled {
+            background-color: rgba(0, 0, 0, 0.12);
+        }
+
+        .MuiButton-containedPrimary {
+            color: #fff;
+            background-color: #3f51b5;
+        }
+
+        .MuiButton-containedPrimary:hover {
+            background-color: #303f9f;
+        }
+
+        @media (hover: none) {
+            .MuiButton-containedPrimary:hover {
+                background-color: #3f51b5;
+            }
+        }
+
+        .MuiButton-containedSecondary {
+            color: #fff;
+            background-color: #f50057;
+        }
+
+        .MuiButton-containedSecondary:hover {
+            background-color: #c51162;
+        }
+
+        @media (hover: none) {
+            .MuiButton-containedSecondary:hover {
+                background-color: #f50057;
+            }
+        }
+
+        .MuiButton-disableElevation {
+            box-shadow: none;
+        }
+
+        .MuiButton-disableElevation:hover {
+            box-shadow: none;
+        }
+
+        .MuiButton-disableElevation.Mui-focusVisible {
+            box-shadow: none;
+        }
+
+        .MuiButton-disableElevation:active {
+            box-shadow: none;
+        }
+
+        .MuiButton-disableElevation.Mui-disabled {
+            box-shadow: none;
+        }
+
+        .MuiButton-colorInherit {
+            color: inherit;
+            border-color: currentColor;
+        }
+
+        .MuiButton-textSizeSmall {
+            padding: 4px 5px;
+            font-size: 0.8125rem;
+        }
+
+        .MuiButton-textSizeLarge {
+            padding: 8px 11px;
+            font-size: 0.9375rem;
+        }
+
+        .MuiButton-outlinedSizeSmall {
+            padding: 3px 9px;
+            font-size: 0.8125rem;
+        }
+
+        .MuiButton-outlinedSizeLarge {
+            padding: 7px 21px;
+            font-size: 0.9375rem;
+        }
+
+        .MuiButton-containedSizeSmall {
+            padding: 4px 10px;
+            font-size: 0.8125rem;
+        }
+
+        .MuiButton-containedSizeLarge {
+            padding: 8px 22px;
+            font-size: 0.9375rem;
+        }
+
+        .MuiButton-fullWidth {
+            width: 100%;
+        }
+
+        .MuiButton-startIcon {
+            display: inherit;
+            margin-left: -4px;
+            margin-right: 8px;
+        }
+
+        .MuiButton-startIcon.MuiButton-iconSizeSmall {
+            margin-left: -2px;
+        }
+
+        .MuiButton-endIcon {
+            display: inherit;
+            margin-left: 8px;
+            margin-right: -4px;
+        }
+
+        .MuiButton-endIcon.MuiButton-iconSizeSmall {
+            margin-right: -2px;
+        }
+
+        .MuiButton-iconSizeSmall>*:first-child {
+            font-size: 18px;
+        }
+
+        .MuiButton-iconSizeMedium>*:first-child {
+            font-size: 20px;
+        }
+
+        .MuiButton-iconSizeLarge>*:first-child {
+            font-size: 22px;
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss357 {
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            margin: .3125rem 1px;
+            padding: 12px 30px;
+            position: relative;
+            font-size: 12px;
+            min-width: auto;
+            min-height: auto;
+            text-align: center;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 400;
+            line-height: 1.42857143;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            touch-action: manipulation;
+            border-radius: 3px;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            vertical-align: middle;
+            background-color: #999;
+        }
+
+        .jss357:hover,
+        .jss357:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2);
+            background-color: #999;
+        }
+
+        .jss357 .fab,
+        .jss357 .fas,
+        .jss357 .far,
+        .jss357 .fal,
+        .jss357 .material-icons {
+            top: 0;
+            display: inline-block;
+            position: relative;
+            font-size: 1.1rem;
+            margin-top: -1em;
+            margin-right: 4px;
+            margin-bottom: -1em;
+            vertical-align: middle;
+        }
+
+        .jss357 svg {
+            top: 0;
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            position: relative;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .jss357.jss385 .fab,
+        .jss357.jss385 .fas,
+        .jss357.jss385 .far,
+        .jss357.jss385 .fal,
+        .jss357.jss385 .material-icons {
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            font-size: 20px;
+            transform: none;
+            margin-top: 0px;
+            line-height: 41px;
+        }
+
+        .jss358 {
+            width: 100%;
+        }
+
+        .jss359 {
+            box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+            background-color: #9c27b0;
+        }
+
+        .jss359:hover,
+        .jss359:focus {
+            box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+            background-color: #9c27b0;
+        }
+
+        .jss360 {
+            box-shadow: 0 2px 2px 0 rgba(0, 172, 193, 0.14), 0 3px 1px -2px rgba(0, 172, 193, 0.2), 0 1px 5px 0 rgba(0, 172, 193, 0.12);
+            background-color: #00acc1;
+        }
+
+        .jss360:hover,
+        .jss360:focus {
+            box-shadow: 0 14px 26px -12px rgba(0, 172, 193, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 172, 193, 0.2);
+            background-color: #00acc1;
+        }
+
+        .jss361 {
+            box-shadow: 0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12);
+            background-color: #4caf50;
+        }
+
+        .jss361:hover,
+        .jss361:focus {
+            box-shadow: 0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2);
+            background-color: #4caf50;
+        }
+
+        .jss362 {
+            box-shadow: 0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12);
+            background-color: #ff9800;
+        }
+
+        .jss362:hover,
+        .jss362:focus {
+            box-shadow: 0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2);
+            background-color: #ff9800;
+        }
+
+        .jss363 {
+            box-shadow: 0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12);
+            background-color: #f44336;
+        }
+
+        .jss363:hover,
+        .jss363:focus {
+            box-shadow: 0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+            background-color: #f44336;
+        }
+
+        .jss364 {
+            box-shadow: 0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12);
+            background-color: #e91e63;
+        }
+
+        .jss364:hover,
+        .jss364:focus {
+            box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+            background-color: #e91e63;
+        }
+
+        .jss365,
+        .jss365:focus,
+        .jss365:hover {
+            color: #999;
+            background-color: #FFF;
+        }
+
+        .jss366 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(85, 172, 238, 0.14), 0 3px 1px -2px rgba(85, 172, 238, 0.2), 0 1px 5px 0 rgba(85, 172, 238, 0.12);
+            background-color: #55acee;
+        }
+
+        .jss366:hover,
+        .jss366:focus,
+        .jss366:visited {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(85, 172, 238, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(85, 172, 238, 0.2);
+            background-color: #55acee;
+        }
+
+        .jss367 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(59, 89, 152, 0.14), 0 3px 1px -2px rgba(59, 89, 152, 0.2), 0 1px 5px 0 rgba(59, 89, 152, 0.12);
+            background-color: #3b5998;
+        }
+
+        .jss367:hover,
+        .jss367:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(59, 89, 152, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(59, 89, 152, 0.2);
+            background-color: #3b5998;
+        }
+
+        .jss368 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(221, 75, 57, 0.14), 0 3px 1px -2px rgba(221, 75, 57, 0.2), 0 1px 5px 0 rgba(221, 75, 57, 0.12);
+            background-color: #dd4b39;
+        }
+
+        .jss368:hover,
+        .jss368:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(221, 75, 57, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(221, 75, 57, 0.2);
+            background-color: #dd4b39;
+        }
+
+        .jss369 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(9, 118, 180, 0.14), 0 3px 1px -2px rgba(9, 118, 180, 0.2), 0 1px 5px 0 rgba(9, 118, 180, 0.12);
+            background-color: #0976b4;
+        }
+
+        .jss369:hover,
+        .jss369:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(9, 118, 180, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(9, 118, 180, 0.2);
+            background-color: #0976b4;
+        }
+
+        .jss370 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(204, 33, 39, 0.14), 0 3px 1px -2px rgba(204, 33, 39, 0.2), 0 1px 5px 0 rgba(204, 33, 39, 0.12);
+            background-color: #cc2127;
+        }
+
+        .jss370:hover,
+        .jss370:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(204, 33, 39, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(204, 33, 39, 0.2);
+            background-color: #cc2127;
+        }
+
+        .jss371 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(229, 45, 39, 0.14), 0 3px 1px -2px rgba(229, 45, 39, 0.2), 0 1px 5px 0 rgba(229, 45, 39, 0.12);
+            background-color: #e52d27;
+        }
+
+        .jss371:hover,
+        .jss371:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(229, 45, 39, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(229, 45, 39, 0.2);
+            background-color: #e52d27;
+        }
+
+        .jss372 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(53, 70, 92, 0.14), 0 3px 1px -2px rgba(53, 70, 92, 0.2), 0 1px 5px 0 rgba(53, 70, 92, 0.12);
+            background-color: #35465c;
+        }
+
+        .jss372:hover,
+        .jss372:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(53, 70, 92, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(53, 70, 92, 0.2);
+            background-color: #35465c;
+        }
+
+        .jss373 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(85, 85, 85, 0.14), 0 3px 1px -2px rgba(85, 85, 85, 0.2), 0 1px 5px 0 rgba(85, 85, 85, 0.12);
+            background-color: #333;
+        }
+
+        .jss373:hover,
+        .jss373:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(85, 85, 85, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(85, 85, 85, 0.2);
+            background-color: #333;
+        }
+
+        .jss374 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(23, 105, 255, 0.14), 0 3px 1px -2px rgba(23, 105, 255, 0.2), 0 1px 5px 0 rgba(23, 105, 255, 0.12);
+            background-color: #1769ff;
+        }
+
+        .jss374:hover,
+        .jss374:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(23, 105, 255, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(23, 105, 255, 0.2);
+            background-color: #1769ff;
+        }
+
+        .jss375 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(234, 76, 137, 0.14), 0 3px 1px -2px rgba(234, 76, 137, 0.2), 0 1px 5px 0 rgba(234, 76, 137, 0.12);
+            background-color: #ea4c89;
+        }
+
+        .jss375:hover,
+        .jss375:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(234, 76, 137, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(234, 76, 137, 0.2);
+            background-color: #ea4c89;
+        }
+
+        .jss376 {
+            color: #FFF;
+            box-shadow: 0 2px 2px 0 rgba(255, 69, 0, 0.14), 0 3px 1px -2px rgba(255, 69, 0, 0.2), 0 1px 5px 0 rgba(255, 69, 0, 0.12);
+            background-color: #ff4500;
+        }
+
+        .jss376:hover,
+        .jss376:focus {
+            color: #FFF;
+            box-shadow: 0 14px 26px -12px rgba(255, 69, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 69, 0, 0.2);
+            background-color: #ff4500;
+        }
+
+        .jss377,
+        .jss377:focus,
+        .jss377:hover {
+            color: #FFF;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .jss377.jss376,
+        .jss377.jss376:focus,
+        .jss377.jss376:hover,
+        .jss377.jss376:visited {
+            color: #ff4500;
+        }
+
+        .jss377.jss375,
+        .jss377.jss375:focus,
+        .jss377.jss375:hover,
+        .jss377.jss375:visited {
+            color: #ea4c89;
+        }
+
+        .jss377.jss374,
+        .jss377.jss374:focus,
+        .jss377.jss374:hover,
+        .jss377.jss374:visited {
+            color: #1769ff;
+        }
+
+        .jss377.jss373,
+        .jss377.jss373:focus,
+        .jss377.jss373:hover,
+        .jss377.jss373:visited {
+            color: #333;
+        }
+
+        .jss377.jss372,
+        .jss377.jss372:focus,
+        .jss377.jss372:hover,
+        .jss377.jss372:visited {
+            color: #35465c;
+        }
+
+        .jss377.jss371,
+        .jss377.jss371:focus,
+        .jss377.jss371:hover,
+        .jss377.jss371:visited {
+            color: #e52d27;
+        }
+
+        .jss377.jss370,
+        .jss377.jss370:focus,
+        .jss377.jss370:hover,
+        .jss377.jss370:visited {
+            color: #cc2127;
+        }
+
+        .jss377.jss369,
+        .jss377.jss369:focus,
+        .jss377.jss369:hover,
+        .jss377.jss369:visited {
+            color: #0976b4;
+        }
+
+        .jss377.jss368,
+        .jss377.jss368:focus,
+        .jss377.jss368:hover,
+        .jss377.jss368:visited {
+            color: #dd4b39;
+        }
+
+        .jss377.jss367,
+        .jss377.jss367:focus,
+        .jss377.jss367:hover,
+        .jss377.jss367:visited {
+            color: #3b5998;
+        }
+
+        .jss377.jss366,
+        .jss377.jss366:focus,
+        .jss377.jss366:hover,
+        .jss377.jss366:visited {
+            color: #55acee;
+        }
+
+        .jss377.jss363,
+        .jss377.jss363:focus,
+        .jss377.jss363:hover,
+        .jss377.jss363:visited {
+            color: #f44336;
+        }
+
+        .jss377.jss364,
+        .jss377.jss364:focus,
+        .jss377.jss364:hover,
+        .jss377.jss364:visited {
+            color: #e91e63;
+        }
+
+        .jss377.jss362,
+        .jss377.jss362:focus,
+        .jss377.jss362:hover,
+        .jss377.jss362:visited {
+            color: #ff9800;
+        }
+
+        .jss377.jss361,
+        .jss377.jss361:focus,
+        .jss377.jss361:hover,
+        .jss377.jss361:visited {
+            color: #4caf50;
+        }
+
+        .jss377.jss360,
+        .jss377.jss360:focus,
+        .jss377.jss360:hover,
+        .jss377.jss360:visited {
+            color: #00acc1;
+        }
+
+        .jss377.jss359,
+        .jss377.jss359:focus,
+        .jss377.jss359:hover,
+        .jss377.jss359:visited {
+            color: #9c27b0;
+        }
+
+        .jss378,
+        .jss378:focus,
+        .jss378:hover {
+            color: inherit;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .jss379 {
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        .jss380 {
+            padding: 1.125rem 2.25rem;
+            font-size: 0.875rem;
+            line-height: 1.333333;
+            border-radius: 0.2rem;
+        }
+
+        .jss380.jss385 .fab,
+        .jss380.jss385 .fas,
+        .jss380.jss385 .far,
+        .jss380.jss385 .fal,
+        .jss380.jss385 svg,
+        .jss380.jss385 .material-icons {
+            margin-top: -4px;
+        }
+
+        .jss381 {
+            padding: 0.40625rem 1.25rem;
+            font-size: 0.6875rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+        }
+
+        .jss381.jss385 .fab,
+        .jss381.jss385 .fas,
+        .jss381.jss385 .far,
+        .jss381.jss385 .fal,
+        .jss381.jss385 svg,
+        .jss381.jss385 .material-icons {
+            margin-top: 1px;
+        }
+
+        .jss382 {
+            border-radius: 30px;
+        }
+
+        .jss383 {
+            width: 100% !important;
+        }
+
+        .jss384,
+        .jss384:hover,
+        .jss384:focus {
+            color: #999;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .jss385 {
+            width: 41px;
+            height: 41px;
+            font-size: 20px;
+            min-width: 41px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .jss385 .fab,
+        .jss385 .fas,
+        .jss385 .far,
+        .jss385 .fal,
+        .jss385 svg,
+        .jss385 .material-icons {
+            margin-right: 0px;
+        }
+
+        .jss385.jss380 {
+            width: 57px;
+            height: 57px;
+            min-width: 57px;
+            line-height: 56px;
+        }
+
+        .jss385.jss381 {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+        }
+
+        .jss385.jss381 .fab,
+        .jss385.jss381 .fas,
+        .jss385.jss381 .far,
+        .jss385.jss381 .fal,
+        .jss385.jss381 .material-icons {
+            font-size: 17px;
+            line-height: 29px;
+        }
+
+        .jss385.jss381 svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .jss385.jss380 .fab,
+        .jss385.jss380 .fas,
+        .jss385.jss380 .far,
+        .jss385.jss380 .fal,
+        .jss385.jss380 .material-icons {
+            font-size: 32px;
+            line-height: 56px;
+        }
+
+        .jss385.jss380 svg {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiSnackbar">
+        .MuiSnackbar-root {
+            left: 8px;
+            right: 8px;
+            display: flex;
+            z-index: 1400;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .MuiSnackbar-anchorOriginTopCenter {
+            top: 8px;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginTopCenter {
+                top: 24px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+            }
+        }
+
+        .MuiSnackbar-anchorOriginBottomCenter {
+            bottom: 8px;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginBottomCenter {
+                left: 50%;
+                right: auto;
+                bottom: 24px;
+                transform: translateX(-50%);
+            }
+        }
+
+        .MuiSnackbar-anchorOriginTopRight {
+            top: 8px;
+            justify-content: flex-end;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginTopRight {
+                top: 24px;
+                left: auto;
+                right: 24px;
+            }
+        }
+
+        .MuiSnackbar-anchorOriginBottomRight {
+            bottom: 8px;
+            justify-content: flex-end;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginBottomRight {
+                left: auto;
+                right: 24px;
+                bottom: 24px;
+            }
+        }
+
+        .MuiSnackbar-anchorOriginTopLeft {
+            top: 8px;
+            justify-content: flex-start;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginTopLeft {
+                top: 24px;
+                left: 24px;
+                right: auto;
+            }
+        }
+
+        .MuiSnackbar-anchorOriginBottomLeft {
+            bottom: 8px;
+            justify-content: flex-start;
+        }
+
+        @media (min-width:600px) {
+            .MuiSnackbar-anchorOriginBottomLeft {
+                left: 24px;
+                right: auto;
+                bottom: 24px;
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss1 {
+            color: #555555;
+            padding: 20px 15px;
+            position: relative;
+            flex-wrap: unset;
+            font-size: 14px;
+            box-shadow: 0 12px 20px -10px rgba(255, 255, 255, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 255, 255, 0.2);
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 300;
+            line-height: 20px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .jss2 {
+            top: 20px;
+        }
+
+        .jss3 {
+            top: 40px;
+        }
+
+        .jss4 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 172, 193, .4);
+            background-color: #00d3ee;
+        }
+
+        .jss5 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(76, 175, 80, .4);
+            background-color: #5cb860;
+        }
+
+        .jss6 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(255, 152, 0, .4);
+            background-color: #ffa21a;
+        }
+
+        .jss7 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4);
+            background-color: #f55a4e;
+        }
+
+        .jss8 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(156, 39, 176, .4);
+            background-color: #af2cc5;
+        }
+
+        .jss9 {
+            color: #FFF;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(233, 30, 99, .4);
+            background-color: #eb3573;
+        }
+
+        .jss10 {
+            display: block;
+            padding: 0;
+            max-width: 89%;
+        }
+
+        .jss11 {
+            width: 11px;
+            height: 11px;
+        }
+
+        .jss12 {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+        }
+
+        .jss13 {
+            left: 15px;
+            width: 38px;
+            height: 38px;
+            display: block;
+            padding: 9px;
+            position: absolute;
+            font-size: 20px;
+            max-width: 38px;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+            margin-top: -39px;
+            border-radius: 50%;
+            background-color: #FFF;
+        }
+
+        .jss14 {
+            color: #5cb860;
+        }
+
+        .jss15 {
+            color: #5cb860;
+        }
+
+        .jss16 {
+            color: #ffa21a;
+        }
+
+        .jss17 {
+            color: #f55a4e;
+        }
+
+        .jss18 {
+            color: #af2cc5;
+        }
+
+        .jss19 {
+            color: #eb3573;
+        }
+
+        .jss20 {
+            display: block;
+            padding-left: 50px;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiTab">
+        .MuiTab-root {
+            padding: 6px 12px;
+            overflow: hidden;
+            position: relative;
+            font-size: 0.875rem;
+            max-width: 264px;
+            min-width: 72px;
+            box-sizing: border-box;
+            min-height: 48px;
+            text-align: center;
+            flex-shrink: 0;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            line-height: 1.75;
+            white-space: normal;
+            letter-spacing: 0.02857em;
+            text-transform: uppercase;
+        }
+
+        @media (min-width:600px) {
+            .MuiTab-root {
+                min-width: 160px;
+            }
+        }
+
+        .MuiTab-labelIcon {
+            min-height: 72px;
+            padding-top: 9px;
+        }
+
+        .MuiTab-labelIcon .MuiTab-wrapper>*:first-child {
+            margin-bottom: 6px;
+        }
+
+        .MuiTab-textColorInherit {
+            color: inherit;
+            opacity: 0.7;
+        }
+
+        .MuiTab-textColorInherit.Mui-selected {
+            opacity: 1;
+        }
+
+        .MuiTab-textColorInherit.Mui-disabled {
+            opacity: 0.5;
+        }
+
+        .MuiTab-textColorPrimary {
+            color: rgba(0, 0, 0, 0.54);
+        }
+
+        .MuiTab-textColorPrimary.Mui-selected {
+            color: #3f51b5;
+        }
+
+        .MuiTab-textColorPrimary.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+        }
+
+        .MuiTab-textColorSecondary {
+            color: rgba(0, 0, 0, 0.54);
+        }
+
+        .MuiTab-textColorSecondary.Mui-selected {
+            color: #f50057;
+        }
+
+        .MuiTab-textColorSecondary.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+        }
+
+        .MuiTab-fullWidth {
+            flex-grow: 1;
+            max-width: none;
+            flex-basis: 0;
+            flex-shrink: 1;
+        }
+
+        .MuiTab-wrapped {
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .MuiTab-wrapper {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss416 {
+            color: #black;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            margin-right: 8px;
+            text-transform: none;
+        }
+
+        .jss416:focus {
+            opacity: 1;
+            outline: none !important;
+        }
+    </style>
+    <style data-jss="" data-meta="PrivateTabIndicator">
+        .jss417 {
+            width: 100%;
+            bottom: 0;
+            height: 2px;
+            position: absolute;
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .jss418 {
+            background-color: #3f51b5;
+        }
+
+        .jss419 {
+            background-color: #f50057;
+        }
+
+        .jss420 {
+            right: 0;
+            width: 2px;
+            height: 100%;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiTabs">
+        .MuiTabs-root {
+            display: flex;
+            overflow: hidden;
+            min-height: 48px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .MuiTabs-vertical {
+            flex-direction: column;
+        }
+
+        .MuiTabs-flexContainer {
+            display: flex;
+        }
+
+        .MuiTabs-flexContainerVertical {
+            flex-direction: column;
+        }
+
+        .MuiTabs-centered {
+            justify-content: center;
+        }
+
+        .MuiTabs-scroller {
+            flex: 1 1 auto;
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .MuiTabs-fixed {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .MuiTabs-scrollable {
+            overflow-x: scroll;
+            scrollbar-width: none;
+        }
+
+        .MuiTabs-scrollable::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width:599.95px) {
+            .MuiTabs-scrollButtonsDesktop {
+                display: none;
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss415 {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .jss415>span {
+            width: 100%;
+            max-width: 40px;
+            background-color: #16bdf9;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiBox">
+
+    </style>
+    <style data-jss="" data-meta="MuiBox">
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1012.0" data-gr-ext-installed="">
+    <div id="root">
+        <main class="cr-app bg-light" style="position: relative;">
+            <div class="cr-content container-fluid"><a href="https://t.me/googleclubsin"
+                    class="btn btn-primary telegram"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                        </path>
+                    </svg> </a>
+                <div class="cr-page px-3 walletPage">
+                    <div class="cr-page__header">
+                        <div class="header-userinfo"><img src="img/user.png">
+                            <div><span class="header-nickname">member</span><span
+                                    class="header-balance"><small>₹</small>0</span></div>
+                        </div>
+                        <div class="header-buttons"><a
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss381 jss360"
+                                tabindex="0" role="button" aria-disabled="false" style="float: right;"><span
+                                    class="MuiButton-label">Rules</span><span class="MuiTouchRipple-root"></span></a>
+                        </div>
+                    </div><br>
+                    <div class="MuiTabs-root">
+                        <div class="MuiTabs-scroller MuiTabs-fixed" style="overflow: hidden;">
+                            <div aria-label="styled tabs example" class="MuiTabs-flexContainer" role="tablist"><button
+                                    class="MuiButtonBase-root MuiTab-root jss416 MuiTab-textColorInherit Mui-selected MuiTab-fullWidth"
+                                    tabindex="0" type="button" role="tab" aria-selected="true"><span
+                                        class="MuiTab-wrapper">Recharge</span></button><button
+                                    class="MuiButtonBase-root MuiTab-root jss416 MuiTab-textColorInherit MuiTab-fullWidth"
+                                    tabindex="-1" type="button" role="tab" aria-selected="false"><span
+                                        class="MuiTab-wrapper">Withdraw</span></button></div><span
+                                class="jss417 jss419 MuiTabs-indicator jss415"
+                                style="left: 0px; width: 376px;"><span></span></span>
+                        </div>
+                    </div>
+                    <div role="tabpanel" id="nav-tabpanel-0" aria-labelledby="nav-tab-0">
+                        <div class="MuiBox-root jss428" style="padding: 24px;">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-xl-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                        <input max="15000" min="0" placeholder="Enter Recharge amount" type="number"
+                                            class="form-control" value="">
+                                    </div>
+                                </div>
+                                <div class="amount-button col-md-12 col-lg-12 col-xl-12"><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            100</span><span class="MuiTouchRipple-root"></span></a><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            1000</span><span class="MuiTouchRipple-root"></span></a><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            2000</span><span class="MuiTouchRipple-root"></span></a><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            5000</span><span class="MuiTouchRipple-root"></span></a><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            10000</span><span class="MuiTouchRipple-root"></span></a><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss376 jss382 ml-3 mr-3 mt-2"
+                                        tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">₹
+                                            15000</span><span class="MuiTouchRipple-root"></span></a></div>
+                                <div class="col-md-12 col-lg-12 col-xl-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text">Email</span>
+                                        </div><input placeholder="Email" type="text" class="form-control" value="">
+                                    </div>
+                                </div>
+                                <div class="mt-3 col-md-12" style="text-align: center;"><button
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss361"
+                                        tabindex="0" type="button"><span class="MuiButton-label"> Recharge </span><span
+                                            class="MuiTouchRipple-root"></span></button></div>
+                                <div class="col-md-12" style="text-align: center;"><a
+                                        class="MuiButtonBase-root MuiButton-root MuiButton-text jss357 jss360 jss377"
+                                        tabindex="0" role="button" aria-disabled="false"
+                                        href="/records/recharge-list"><span class="MuiButton-label"> Recharge
+                                            Records</span><span class="MuiTouchRipple-root"></span></a></div>
+                                <div class="mt-3 col-md-12" style="text-align: center;"><img src="/img/bank.jfif"
+                                        style="width: 100%; max-width: 500px;"></div>
+                            </div>
+                            <div class="row">
+                                <div style="height: 100px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" hidden="" id="nav-tabpanel-1" aria-labelledby="nav-tab-1"></div>
+                </div>
+                <nav class="footer navbar">
+                    <ul class="navbar-nav">
+                        <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link" id="navItem-Color-0"
+                                href="index.html"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 512 512" class="cr-footer__nav-item-icon" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M272.824 24.318c-14.929.312-25.66 3.246-32.767 8.446L142.898 84.91l-54.105 73.514C77.42 175.98 85.517 210 121.111 188.197l38.9-51.351c49.476-42.711 150.485-23.032 102.587 62.591-23.53 49.582-12.457 73.79 17.76 83.95l13.812-46.381c23.949-53.825 68.502-63.51 66.684-106.904l107.302 7.724-.865-112.045-194.467-1.463zm-54.09 103.338c-17.41-.3-34.486 6.898-46.92 17.375l-39.044 51.33c10.713 8.506 21.413 3.96 32.125-6.363 12.626 6.394 22.365-3.522 30.365-23.297 3.317-13.489 8.21-23.037 23.474-39.045zm-32.617 88.324a13.49 13.49 0 0 0-5.232 1.235L51.72 276.725c-6.784 3.13-9.763 11.202-6.633 17.992l85.27 185.08c3.131 6.783 11.204 9.779 18 6.635l129.15-59.504c6.796-3.137 9.776-11.198 6.646-18L198.871 223.86c-2.344-5.097-7.474-8.043-12.754-7.88z">
+                                    </path>
+                                </svg><span class="">Color</span></a></li>
+                        <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link active"
+                                id="navItem-Wallet-1" href="/wallet" aria-current="page"><svg stroke="currentColor"
+                                    fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    class="cr-footer__nav-item-icon" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M200.4 27.39L180.9 183h42.8l49.1-146.57-72.4-9.04zm91.7 8L242.7 183l149.7.1 34.3-102.61-134.6-45.1zM180 46.03l-71.9 7.84L122.2 183h40.7L180 46.03zM64 153c-11.5 0-19.18 8.8-21.27 17.2-1.04 4.2-.45 7.6.73 9.5 1.17 1.8 2.79 3.3 8.54 3.3h52.1l-3.3-30H64zm357.4 0l-10 30h47.5c-2.6-5-3.7-10.3-3-15.6.7-5.2 2.7-9.9 5.3-14.4h-39.8zM41 201v246.9c0 5.1 2.79 11.1 7.37 15.7C52.96 468.2 59 471 64 471l384 .1c5 0 11-2.8 15.6-7.4 4.6-4.6 7.4-10.6 7.4-15.7v-71h-87c-44 0-44-82 0-82h87v-93.9L41 201zm343 112c-20 0-20 46 0 46h22.3c-9-3.8-15.3-12.7-15.3-23s6.3-19.2 15.3-23H384zm41.7 0c9 3.8 15.3 12.7 15.3 23s-6.3 19.2-15.3 23H487v-46h-61.3zm-9.7 16c-4 0-7 3-7 7s3 7 7 7 7-3 7-7-3-7-7-7z">
+                                    </path>
+                                </svg><span class="">Wallet</span></a></li>
+                        <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link"
+                                id="navItem-Account-2" href="/account"><svg stroke="currentColor" fill="currentColor"
+                                    stroke-width="0" viewBox="0 0 448 512" class="cr-footer__nav-item-icon" height="1em"
+                                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z">
+                                    </path>
+                                </svg><span class="">Account</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="erd_scroll_detection_container erd_scroll_detection_container_animation_active"
+                style="visibility: hidden; display: inline; width: 0px; height: 0px; z-index: -1; overflow: hidden; margin: 0px; padding: 0px;">
+                <div dir="ltr" class="erd_scroll_detection_container"
+                    style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; width: 100%; height: 100%; left: 0px; top: 0px;">
+                    <div class="erd_scroll_detection_container"
+                        style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; inset: -1px 0px 0px -1px;">
+                        <div
+                            style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;">
+                            <div style="position: absolute; left: 0px; top: 0px; width: 1360px; height: 802px;"></div>
+                        </div>
+                        <div
+                            style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;">
+                            <div style="position: absolute; width: 200%; height: 200%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>!function (o) { function e(e) { for (var t, r, c = e[0], n = e[1], f = e[2], d = 0, a = []; d < c.length; d++)r = c[d], s[r] && a.push(s[r][0]), s[r] = 0; for (t in n) Object.prototype.hasOwnProperty.call(n, t) && (o[t] = n[t]); for (b && b(e); a.length;)a.shift()(); return i.push.apply(i, f || []), u() } function u() { for (var e, t = 0; t < i.length; t++) { for (var r = i[t], c = !0, n = 1; n < r.length; n++) { var f = r[n]; 0 !== s[f] && (c = !1) } c && (i.splice(t--, 1), e = p(p.s = r[0])) } return e } var r = {}, l = { 2: 0 }, s = { 2: 0 }, i = []; function p(e) { if (r[e]) return r[e].exports; var t = r[e] = { i: e, l: !1, exports: {} }; return o[e].call(t.exports, t, t.exports, p), t.l = !0, t.exports } p.e = function (i) { var e = []; l[i] ? e.push(l[i]) : 0 !== l[i] && { 23: 1 }[i] && e.push(l[i] = new Promise(function (e, c) { for (var t = "static/css/" + ({}[i] || i) + "." + { 0: "31d6cfe0", 4: "31d6cfe0", 5: "31d6cfe0", 6: "31d6cfe0", 7: "31d6cfe0", 8: "31d6cfe0", 9: "31d6cfe0", 10: "31d6cfe0", 11: "31d6cfe0", 12: "31d6cfe0", 13: "31d6cfe0", 14: "31d6cfe0", 15: "31d6cfe0", 16: "31d6cfe0", 17: "31d6cfe0", 18: "31d6cfe0", 19: "31d6cfe0", 20: "31d6cfe0", 21: "31d6cfe0", 22: "31d6cfe0", 23: "8148ad87", 24: "31d6cfe0", 25: "31d6cfe0", 26: "31d6cfe0", 27: "31d6cfe0", 28: "31d6cfe0", 29: "31d6cfe0", 30: "31d6cfe0", 31: "31d6cfe0", 32: "31d6cfe0", 33: "31d6cfe0", 34: "31d6cfe0", 35: "31d6cfe0", 36: "31d6cfe0", 37: "31d6cfe0", 38: "31d6cfe0", 39: "31d6cfe0", 40: "31d6cfe0", 41: "31d6cfe0", 42: "31d6cfe0", 43: "31d6cfe0", 44: "31d6cfe0", 45: "31d6cfe0", 46: "31d6cfe0", 47: "31d6cfe0", 48: "31d6cfe0", 49: "31d6cfe0" }[i] + ".chunk.css", n = p.p + t, r = document.getElementsByTagName("link"), f = 0; f < r.length; f++) { var d = (o = r[f]).getAttribute("data-href") || o.getAttribute("href"); if ("stylesheet" === o.rel && (d === t || d === n)) return e() } var a = document.getElementsByTagName("style"); for (f = 0; f < a.length; f++) { var o; if ((d = (o = a[f]).getAttribute("data-href")) === t || d === n) return e() } var u = document.createElement("link"); u.rel = "stylesheet", u.type = "text/css", u.onload = e, u.onerror = function (e) { var t = e && e.target && e.target.src || n, r = new Error("Loading CSS chunk " + i + " failed.\n(" + t + ")"); r.request = t, delete l[i], u.parentNode.removeChild(u), c(r) }, u.href = n, document.getElementsByTagName("head")[0].appendChild(u) }).then(function () { l[i] = 0 })); var r = s[i]; if (0 !== r) if (r) e.push(r[2]); else { var t = new Promise(function (e, t) { r = s[i] = [e, t] }); e.push(r[2] = t); var c, f = document.createElement("script"); f.charset = "utf-8", f.timeout = 120, p.nc && f.setAttribute("nonce", p.nc), f.src = p.p + "static/js/" + ({}[i] || i) + "." + { 0: "7811388d", 4: "e7618d7f", 5: "13b316ad", 6: "4da4f0a3", 7: "b0d299b1", 8: "9187cb60", 9: "4b482165", 10: "0a1de3ae", 11: "74e6eaac", 12: "a8901142", 13: "89c9fd33", 14: "6f1b5c80", 15: "d1e99bf3", 16: "4b7f2caa", 17: "70f2ab12", 18: "8339a0ea", 19: "48dd46b3", 20: "41eabea5", 21: "97dbc8e7", 22: "0535e8d0", 23: "0188f3c3", 24: "35fc391f", 25: "cc75836a", 26: "a2899fc3", 27: "71e40724", 28: "d99ae6e7", 29: "e4c9292b", 30: "e8ae9eeb", 31: "ffccdf8c", 32: "57014de1", 33: "27117d74", 34: "2f258f19", 35: "c2fa2dd5", 36: "355febba", 37: "cb45c100", 38: "efec45d8", 39: "a8cb08b4", 40: "93896c8d", 41: "505ed372", 42: "e569bf63", 43: "62c25419", 44: "4a62ea78", 45: "f82131ed", 46: "f91d7e7d", 47: "46a823d8", 48: "4ea09169", 49: "5b919ddb" }[i] + ".chunk.js", c = function (e) { f.onerror = f.onload = null, clearTimeout(d); var t = s[i]; if (0 !== t) { if (t) { var r = e && ("load" === e.type ? "missing" : e.type), c = e && e.target && e.target.src, n = new Error("Loading chunk " + i + " failed.\n(" + r + ": " + c + ")"); n.type = r, n.request = c, t[1](n) } s[i] = void 0 } }; var d = setTimeout(function () { c({ type: "timeout", target: f }) }, 12e4); f.onerror = f.onload = c, document.head.appendChild(f) } return Promise.all(e) }, p.m = o, p.c = r, p.d = function (e, t, r) { p.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, p.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, p.t = function (t, e) { if (1 & e && (t = p(t)), 8 & e) return t; if (4 & e && "object" == typeof t && t && t.__esModule) return t; var r = Object.create(null); if (p.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var c in t) p.d(r, c, function (e) { return t[e] }.bind(null, c)); return r }, p.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return p.d(t, "a", t), t }, p.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, p.p = "/", p.oe = function (e) { throw console.error(e), e }; var t = window.webpackJsonp = window.webpackJsonp || [], c = t.push.bind(t); t.push = e, t = t.slice(); for (var n = 0; n < t.length; n++)e(t[n]); var b = c; u() }([])</script>
+    <script src="/static/js/3.af949e97.chunk.js"></script>
+    <script src="/static/js/main.ddf71476.chunk.js"></script>
+</body>
