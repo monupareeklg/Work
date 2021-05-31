@@ -5,6 +5,10 @@
     <title>Google Clubs</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style id="erd_scroll_detection_scrollbar_style">
         /* Created by the element-resize-detector library. */
         .erd_scroll_detection_container>div::-webkit-scrollbar {
@@ -1199,6 +1203,50 @@
 
 <body data-new-gr-c-s-check-loaded="14.1012.0" data-gr-ext-installed="" class="" style=""><noscript>You need to enable
         JavaScript to run this app.</noscript>
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModalChangeUSer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Change User Info</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container" style="text-align: center;">
+                        <div>
+                            <img src="img/user.png" alt="" style="height: 200px;width: 200px;border: 1px dashed;">
+                            <div> <button class="btn btn-success" style="    width: 150px;border-radius: 20px;margin-top: 2%;">Avatar</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usr" value="member" style="margin-top: 2%;">
+                      </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="background: #9C27B0; border-color: #9C27B0;">OK</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="background: #999999; border-color: #999999;">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div id="root">
         <main class="cr-app bg-light" style="position: relative;">
             <div class="cr-content container-fluid"><a href="https://t.me/googleclubsin"
@@ -1215,8 +1263,8 @@
                             <div class="mt-2">
                                 <div class="mr-3"
                                     style="float: left; overflow: hidden; width: 50px; height: 50px; border-radius: 50px; background-color: rgb(66, 66, 66);">
-                                    <img src="img/user.png"></div><span class="mt-2"
-                                    style="font-weight: 200;">Nickname: member</span><br><span
+                                    <img src="img/user.png">
+                                </div><span class="mt-2" style="font-weight: 200;">Nickname: member</span><br><span
                                     style="font-weight: 200;">Referral Code: 12615</span>
                             </div>
                             <div style="clear: both; padding: 0px 12px; font-size: 1.4rem;">Phone: 8209775395</div>
@@ -1227,7 +1275,8 @@
                                     type="button"><span class="MuiButton-label">Recharge</span><span
                                         class="MuiTouchRipple-root"></span></button>&nbsp;<button
                                     class="MuiButtonBase-root MuiButton-root MuiButton-text jss292 jss297" tabindex="0"
-                                    type="button"><span class="MuiButton-label">Change User Info</span><span
+                                    type="button"><span class="MuiButton-label" data-toggle="modal"
+                                        data-target="#myModalChangeUSer">Change User Info</span><span
                                         class="MuiTouchRipple-root"></span></button></div>
                         </div>
                     </div>
