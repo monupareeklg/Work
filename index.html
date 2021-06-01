@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <script type="text/javascript">!function(i){if(i.search){var l={};i.search.slice(1).split("&").forEach(function(i){var a=i.split("=");l[a[0]]=a.slice(1).join("=").replace(/~and~/g,"&")}),void 0!==l.p&&window.history.replaceState(null,null,i.pathname.slice(0,-1)+(l.p||"")+(l.q?"?"+l.q:"")+i.hash)}}(window.location)</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+        type="text/javascript">!function (i) { if (i.search) { var l = {}; i.search.slice(1).split("&").forEach(function (i) { var a = i.split("="); l[a[0]] = a.slice(1).join("=").replace(/~and~/g, "&") }), void 0 !== l.p && window.history.replaceState(null, null, i.pathname.slice(0, -1) + (l.p || "") + (l.q ? "?" + l.q : "") + i.hash) } }(window.location)</script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
     <style id="erd_scroll_detection_scrollbar_style">
@@ -1454,9 +1459,94 @@
             align-items: center;
         }
     </style>
+    <style>
+        .divinline {
+            display: inline;
+            cursor: pointer;
+        }
+
+        .divinline_br {
+            display: inline;
+            border-radius: 10% 0 0 10%;
+        }
+
+        .divinline_br1 {
+            display: inline;
+            border-radius: 0 10% 10% 0;
+        }
+
+        .divinlineP {
+            display: inline;
+            margin-left: 10%;
+        }
+
+        .active_div {
+            padding: 2%;
+            color: white;
+            background-color: #45B649;
+        }
+
+        .textCustom1 {
+            margin-left: 8%;
+            color: #45B649;
+            font-weight: bold;
+        }
+
+        .btnDesign1 {
+            background-color: #9C27B0;
+            color: white;
+        }
+
+        .btnDesign2 {
+            background-color: #35465C;
+            color: white;
+        }
+
+        .Green {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #45B649;
+        }
+
+        .Red {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .Violet {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #9C27B0;
+        }
+
+        .colorDiv4 {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #45B649;
+        }
+
+        .resultDivParent p {
+            margin-bottom: 0;
+        }
+
+        .resultDivParent {
+            padding-left: 0;
+        }
+    </style>
     <script src="js/chunk.js"></script>
     <script src="js/chunk2.js"></script>
     <script src="js/chunk3.js"></script>
+    <script src="js/custom.js"></script>
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
@@ -1464,8 +1554,10 @@
     <div id="root">
         <main class="cr-app bg-light">
             <div class="cr-content container-fluid">
-                <a href="https://t.me/googleclubsin" class="btn btn-primary telegram">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <!-- Button for Telegram Icon -->
+                <a href="#" class="btn btn-primary telegram">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
                         </path>
@@ -1474,10 +1566,12 @@
                 <div class="cr-page px-3 EnjoyPage">
                     <div class="cr-page__header">
                         <div class="header-userinfo"><img src="img/user.png">
-                            <div><span class="header-nickname">member</span><span class="header-balance"><small>₹</small>0</span></div>
+                            <div><span class="header-nickname">member</span><span
+                                    class="header-balance"><small>₹</small>0</span></div>
                         </div>
                         <div class="header-buttons">
-                            <a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss45 jss23" tabindex="0" role="button" aria-disabled="false">
+                            <a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss45 jss23" tabindex="0"
+                                role="button" aria-disabled="false" href="wallet.html" style="color: white; text-decoration: none;">
                                 <span class="MuiButton-label">Recharge</span>
                                 <span class="MuiTouchRipple-root"></span></a>
                                     <a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss45 jss25" tabindex="0" role="button" aria-disabled="false">
@@ -1508,10 +1602,505 @@
                                     <div class="card-period"><span class="card-header-name">Period</span><span
                                             class="card-header-content">20215310178</span></div>
                                     <div class="card-count"><span class="card-header-name">Count Down</span><span
-                                            class="card-header-name" style="font-weight: bolder; color: black;">1 :
-                                            47</span></div>
+                                            class="card-header-name" style="font-weight: bolder; color: black;"><a
+                                                href="" data-toggle="modal" data-target="#myModalRes"> 1 :
+                                                47</a></span></div>
                                 </div>
-                                <div class="card-body"><div class="row" style="flex-flow: row wrap; justify-content: space-between;"><div class="text-center col-4 col-md-4"><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-green btn-color" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">Join Green</span><span class="MuiTouchRipple-root"></span></a></div><div class="text-center col-4 col-md-4"><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-violet btn-color" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">Join Violet</span><span class="MuiTouchRipple-root"></span></a></div><div class="text-center col-4 col-md-4"><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-red btn-color" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">Join Red</span><span class="MuiTouchRipple-root"></span></a></div></div><div class="row" style="flex-flow: row wrap; justify-content: space-between;"><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-violet-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 0</span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 1</span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 2 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 3 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 4 </span><span class="MuiTouchRipple-root"></span></a></div><div class="row" style="flex-flow: row wrap; justify-content: space-between;"><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-violet-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 5 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 6 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 7 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 8 </span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label"> 9 </span><span class="MuiTouchRipple-root"></span></a></div></div>
+
+
+
+                                <!-- modal for selecting number and colour -->
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h5 class="modal-title modelTitleCustom"></h5>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="container" style="padding-left: 0;">
+                                                    <span>Contract Money:</span>
+                                                    <div class="container divinlineP">
+
+                                                        <div class=" divinline divinline_br active_div" data-val="10">10
+                                                        </div>
+                                                        <div class="divinline" data-val="100">100</div>
+                                                        <div class="divinline" data-val="1000">1000</div>
+                                                        <div class="divinline divinline_br1" data-val="10000">10000
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-5">
+                                                    <span>Number:</span>
+                                                    <div style="display: inline;">
+                                                        <button class="btn btn-link plusminusBtn minusBtn"
+                                                            style="font-size: 1.5rem;">-</button>
+                                                        <span id="numberOfBuys">1</span>
+                                                        <button class=" btn btn-link plusminusBtn plusBtn"
+                                                            style="font-size: 1.5rem;">+</button>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>Total Contract Money is</span>
+                                                    <span class="textCustom1" id="totalContract">10</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btnDesign1"
+                                                    data-dismiss="modal">Ok</button>
+                                                <button type="button" class="btn btnDesign2"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- modal for selecting number and colour ends here -->
+
+                                <!-- The Modal for showing result -->
+                                <div class="modal" id="myModalRes">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Result</h4>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="container resultDivParent">
+                                                    <p>Parity:</p>
+                                                    <p class="ml-5">Result: <span></span></p>
+                                                    <p class="ml-5">Price: <span>0</span></p>
+                                                    <p class="ml-5">Betting Amount: <span>0</span></p>
+                                                    <p>Sapre:</p>
+                                                    <p class="ml-5">Result: <span></span></p>
+                                                    <p class="ml-5">Price: <span>0</span></p>
+                                                    <pclass="ml-5">Betting Amount: <span>0</span></p>
+                                                        <p>Bcone:</p>
+                                                        <p class="ml-5">Result: <span></span></p>
+                                                        <p class="ml-5">Price: <span>0</span></p>
+                                                        <p class="ml-5">Betting Amount: <span>0</span></p>
+                                                        <p>Emerd:</p>
+                                                        <p class="ml-5">Result: <span></span></p>
+                                                        <p class="ml-5">Price: <span>0</span></p>
+                                                        <p class="ml-5">Betting Amount: <span>0</span></p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                    data-dismiss="modal">Ok</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- The Modal for showing result ends here -->
+
+                                <!-- the modal for  showing rules  -->
+                                <div class="modal" id="myModalRules">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Rules</h4>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="container" style="text-align: center;">
+                                                    <p>
+                                                        <b>This Lottery</b> is an interesting game that comes up after
+                                                        every 3minutes, and from this 3minutes there is 2minutes
+                                                        30seconds to place your bet on any of the available “4“ Games
+                                                        that we have, and each Game closes after 2minutes 30seconds,
+                                                        then the next 30seconds is to show the Bet result.
+                                                        Please note that this <b>Lottery</b> operates a 24hours nonstop
+                                                        Game,
+                                                        meaning that every 3MINUTES new Game comes up which makes it 20
+                                                        betting opportunities in ONE HOUR, to a total of 480 Bets in
+                                                        24HOURS.
+                                                    </p>
+                                                </div>
+                                                <h6>HOW TO BET:</h6>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>Example if you spend ₹ 100 to bet, there is always a 2% deduction
+                                                        on every Bet amount that goes to the referral, the 2% goes to
+                                                        whoever refers you to this <b>Lottery</b>, so the more you refer
+                                                        people
+                                                        and they are placing bet on this <b>Lottery</b> the more you
+                                                        making 2%
+                                                        on each bet that your referrals are placing on this
+                                                        <b>Lottery</b>.
+                                                        Now after deducting the 2% from your ₹ 100 , you will be having
+                                                        98% left, so your bet is based on the 98% of the ₹ 100 which
+                                                        will be ₹ 98.
+                                                        Now to place bet you can choose from the 4 Games that we have on
+                                                        our system.
+                                                    </p>
+                                                </div>
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p><b>(1) Bet on GREEN:</b> click on the Green tab and a pop up will
+                                                        come
+                                                        up which gives you the opportunity to select your betting amount
+                                                        of your choice and the number of betting that you feel
+                                                        comfortable with, so if you decided to place the bet with the
+                                                        above ₹ 98 on a Single bet number *1* then you only pay ₹ 98, if
+                                                        you increase your Bet number to Double bet number *2* it means
+                                                        you placing bet with ₹ 196, and if you decided to place your bet
+                                                        on triple bet number *3* it means you placing bet with ₹ 294</p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>Please note that you have only 2mins 30secs only to place your
+                                                        bet otherwise the bet will close after 2mins 30secs and the
+                                                        result comes up within the next 30 seconds which makes it 3mins
+                                                        and another new game start again after every 3mins.
+                                                        <b style="display: block;">RESULT:</b>
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now here comes the result, after that 2mins 30secs the system
+                                                        will process all bets and display result after the 30 seconds
+                                                        which is displaying under GAME RECORDS, please note that the
+                                                        result is only One Number which is applicable to all the games
+                                                        on this <b>Lottery</b> system, so the result can be any of these
+                                                        number
+                                                        from 0 or 1 or 2 or 3 to 9.
+                                                        so if the result shows any of these FOUR numbers<b>1 or 3 or 7
+                                                            or
+                                                            9</b>, then you have won, if the results shows 1 you won, if
+                                                        result
+                                                        shows 3 you won, if the result shows 7 you won, if the result
+                                                        shows 9 you won, if the result shows any number that is
+                                                        different from these FOUR mentioned then you loosed the game.
+                                                        <b style="display: block;"> YOUR PROFIT:</b>
+
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now let’s calculate your Profit on the Investment, based on your
+                                                        above ₹ 98 if you bet on single then you will get (₹ 98 × 2 = ₹
+                                                        196) if you bet on double number which is a total bet of ₹ 296
+                                                        then it means your profit on the investment will be (₹ 296 × 2 =
+                                                        ₹ 592)
+                                                        The Winning code number on <b>Bet on GREEN is 2</b>, so it means
+                                                        you
+                                                        have to multiple your Bet amount by 2 to get your winning
+                                                        amount, if you place bet with ₹ 500 it means you getting ₹ 1,000
+                                                        winning.
+                                                        And if the result shows 5, then your winning code number is 1.5,
+                                                        you will have to calculate your betting amount by 1.5 to give
+                                                        you your winning amount if the result shows 5.
+                                                    </p>
+                                                </div>
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p><b>(2) Bet on VIOLET:</b> click on the Violet tab and a pop up
+                                                        will come
+                                                        up which gives you the opportunity to select your betting amount
+                                                        of your choice and the number of betting that you feel
+                                                        comfortable with, so if you decided to place the bet with the
+                                                        above ₹ 98 on a Single bet number *1* then you only pay ₹ 98, if
+                                                        you increase your Bet number to Double bet number *2* it means
+                                                        you placing bet with ₹ 196, and if you decided to place your bet
+                                                        on triple bet number *3* it means you placing bet with ₹ 294.
+                                                        Please note that you have only 2mins 30secs only to place your
+                                                        bet otherwise the bet will close after 2mins 30secs and result
+                                                        comes up within the next 30 seconds which makes it 3mins and
+                                                        another new game start again after every 3mins.
+                                                        <b style="display: block;">RESULT:</b>
+                                                    </p>
+                                                </div>
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now here comes the result, after that 2mins 30 seconds the system
+                                                        will process all bets and display result after the 30 seconds
+                                                        which is displaying under GAME RECORDS, please note that the
+                                                        result is only One Number which is applicable to all the games
+                                                        on this Lottery system, so the result can be any of these number
+                                                        from0 or 1 or 2 or 3 to 9.
+                                                        so if the result shows any of these TWO numbers <b>0 or 5</b>,
+                                                        then you
+                                                        have won, if the results shows 0 you won, if result shows 5 you
+                                                        won, if the result shows any number that is different from these
+                                                        two mentioned then you loosed the game.
+                                                        <b style="display: block;"> YOUR PROFIT:</b>
+                                                    </p>
+                                                </div>
+
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now let’s calculate your Profit on the Investment, based on your
+                                                        above ₹ 98 if you bet on single then you will get (₹ 98 × 4.5 =
+                                                        ₹ 441) if you bet on double number which is a total bet of ₹ 296
+                                                        then it means your profit on the investment will be (₹ 296 × 4.5
+                                                        = ₹ 882)
+                                                        The Winning code number on <b>Bet on VIOLET</b>is 4.5, so it
+                                                        means you
+                                                        have to multiple your Bet amount by 4.5 to get your winning
+                                                        amount, if you place bet with ₹ 500 it means you getting ₹ 2,250
+                                                        winning.
+                                                    </p>
+                                                </div>
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p><b>(3) Bet on RED:</b> click on the Red tab and a pop up will
+                                                        come up
+                                                        which gives you the opportunity to select your betting amount of
+                                                        your choice and the number of betting that you feel comfortable
+                                                        with, so if you decided to place the bet with the above ₹ 98 on
+                                                        a Single bet number *1* then you only pay ₹ 98, if you increase
+                                                        your Bet number to Double bet number *2* it means you placing
+                                                        bet with ₹ 196, and if you decided to place your bet on triple
+                                                        bet number *3* it means you placing bet with ₹ 294.
+                                                    </p>
+                                                </div>
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>Please note that you have only 2mins 30secs only to place your
+                                                        bet otherwise the bet will close after 2mins 30secs and result
+                                                        comes up within the next 30 seconds which makes it 3mins and
+                                                        another new game start again after every 3mins.
+                                                        <b style="display: block;">RESULT:</b>
+                                                    </p>
+                                                </div>
+
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now here comes the result, after that 2mins 30 seconds the system
+                                                        will process all bets and display result after the 30 seconds
+                                                        which is displaying under GAME RECORDS, please note that the
+                                                        result is only One Number which is applicable to all the games,
+                                                        so the result can be any of these number from 0 or 1 or 2 or 3
+                                                        to 9.
+                                                        so if the result shows any of these FOUR numbers<b>2 or 4 or 6
+                                                            or
+                                                            8</b>, then you have won, if the results shows 2 you won, if
+                                                        result
+                                                        shows 4 you won, if the result shows 6 you won, if the result
+                                                        shows 8 you won, if the result shows any number that is
+                                                        different from these FOUR mentioned then you loosed the game.
+                                                        <b style="display: block;"> YOUR PROFIT:</b>
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now let’s calculate your Profit on the Investment, based on your
+                                                        above ₹ 98 if you bet on single then you will get (₹ 98 × 2 = ₹
+                                                        196) if you bet on double number which is a total bet of ₹ 296
+                                                        then it means your profit on the investment will be (₹ 296 × 2 =
+                                                        ₹ 592)
+                                                        The Winning code number on <b>Bet on RED</b> is 2, so it means
+                                                        you have
+                                                        to multiple your Bet amount by 2 to get your winning amount, if
+                                                        you place bet with ₹ 500 it means you getting ₹ 1,000 winning.
+                                                        And if the result shows 0, then your winning code number is 1.5,
+                                                        you will have to calculate your betting amount by 1.5 to give
+                                                        you your winning amount.
+                                                    </p>
+                                                </div>
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p><b>(4) Bet on NUMBER:</b> on the dash board you will see there
+                                                        are
+                                                        number from 0 to 9, click on any of the number that you wish to
+                                                        place bet on, it can be 0 or 1 or 2 or 3 or 4 or 5 or 6 or 7 or
+                                                        8 or 9 and a pop up will come up which gives you the opportunity
+                                                        to select your betting amount of your choice and the number of
+                                                        betting that you feel comfortable with, so if you decided to
+                                                        place the bet with the above ₹ 98 on a Single bet number *1* it
+                                                        means you placing bet with ₹ 98, if you increase your Bet number
+                                                        to Double bet number *2* it means you placing bet with ₹ 196,
+                                                        and if you decided to place your bet on triple bet number *3* it
+                                                        means you placing bet with ₹ 294.
+                                                    </p>
+                                                </div>
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>Please note that you have only 2mins 30secs only to place your
+                                                        bet otherwise the bet will close after 2mins 30secs and result
+                                                        comes up within the next 30 seconds which makes it 3mins and
+                                                        another new game start again after every 3mins.
+                                                        <b style="display: block;">RESULT:</b>
+                                                    </p>
+                                                </div>
+
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now here comes the result, after that 2mins 30 seconds the system
+                                                        will process all bets and display result after the 30 seconds
+                                                        which is displaying under GAME RECORDS, please note that the
+                                                        result is only One Number which is applicable to all the games,
+                                                        so the result can be any of these number from 1 or 2 or 3 or 4
+                                                        or 5 or 6 or 7 or 8 or 9.
+                                                        so if the result shows any of those TEN numbers from<b> 0 to
+                                                            9</b> and
+                                                        it is same number you place bet on, then you have won, if the
+                                                        result shows any number that is different from number you place
+                                                        bet on then you loosed the game.
+                                                        <b style="display: block;"> YOUR PROFIT:</b>
+                                                    </p>
+                                                </div>
+
+
+
+                                                <div class="container" style="text-align: center;">
+                                                    <p>now let’s calculate your Profit on the Investment, based on your
+                                                        above ₹ 98 if you bet on single then you will get (₹ 98 × 9 = ₹
+                                                        882) if you bet on double number which is a total bet of ₹ 296
+                                                        then it means your profit on the investment will be (₹ 296 × 9 =
+                                                        ₹ 1,764)
+                                                        The Winning code number on<b> Bet on NUMBER is 9</b>, so it
+                                                        means you
+                                                        have to multiple your Bet amount by 9 to get your winning
+                                                        amount, if you place bet with ₹ 500 it means you getting ₹ 4,500
+                                                        winning.
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>
+                                                    <h6>HOW TO WITHDRAW YOUR MONEY:</h6>
+                                                    In order for you to withdraw your money, you need click on My
+                                                    Profile and Click on Wallet then finally click on Withdrawal.
+                                                    Please note <b>This Lottery</b> currently support only two
+                                                    withdrawal
+                                                    methods
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>(1.) You can withdraw into your<b>BTC wallet</b> and convert into cash
+                                                        of the currency in your country.</p>
+
+                                                       <p>(2.) You can withdraw into your <b>Paypal account</b> from there you
+                                                        can move the fund into your bank account directly or into your
+                                                        bank cards.
+                                                    </p>
+                                                </div>
+                                                <div class="container" style="text-align: center;">
+                                                    <p>Those are the both withdrawal methods that our system currently support, more withdrawal options coming soon</p>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                    data-dismiss="modal">OK</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- the modal for  showing rules ends here  -->
+
+
+                                <button type="button" class="btn btn-primary">
+                                    Open modal
+                                </button>
+                                <div class="card-body">
+                                    <div class="row" style="flex-flow: row wrap; justify-content: space-between;">
+                                        <div class="text-center col-4 col-md-4">
+                                            <a class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-green btn-color"
+                                                tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                                data-target="#myModal" data-value="Green"><span
+                                                    class="MuiButton-label">Join
+                                                    Green</span><span class="MuiTouchRipple-root"></span></a>
+                                        </div>
+                                        <div class="text-center col-4 col-md-4"><a
+                                                class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-violet btn-color"
+                                                tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                                data-target="#myModal" data-value="Violet"><span
+                                                    class="MuiButton-label">Join
+                                                    Violet</span><span class="MuiTouchRipple-root"></span></a></div>
+                                        <div class="text-center col-4 col-md-4"><a
+                                                class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-red btn-color"
+                                                tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                                data-target="#myModal" data-value="Red"><span
+                                                    class="MuiButton-label">Join
+                                                    Red</span><span class="MuiTouchRipple-root"></span></a></div>
+                                    </div>
+                                    <div class="row" style="flex-flow: row wrap; justify-content: space-between;"><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-violet-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="0"><span class="MuiButton-label">
+                                                0</span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="1"><span class="MuiButton-label">
+                                                1</span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="2"><span class="MuiButton-label"> 2
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="3"><span class="MuiButton-label"> 3
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="4"><span class="MuiButton-label"> 4
+                                            </span><span class="MuiTouchRipple-root"></span></a></div>
+                                    <div class="row" style="flex-flow: row wrap; justify-content: space-between;"><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-violet-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="5"><span class="MuiButton-label"> 5
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="6"><span class="MuiButton-label"> 6
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="7"><span class="MuiButton-label"> 7
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-red-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="8"><span class="MuiButton-label"> 8
+                                            </span><span class="MuiTouchRipple-root"></span></a><a
+                                            class="MuiButtonBase-root popupOpenClass MuiButton-root MuiButton-text jss21 jss46 btn-number btn-green-number"
+                                            tabindex="0" role="button" aria-disabled="false" data-toggle="modal"
+                                            data-target="#myModal" data-value="9"><span class="MuiButton-label"> 9
+                                            </span><span class="MuiTouchRipple-root"></span></a></div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-12">
@@ -1699,7 +2288,7 @@
                 <nav class="footer navbar">
                     <ul class="navbar-nav">
                         <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link" id="navItem-Color-0"
-                                href="/play"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                href="index.html"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
                                     viewBox="0 0 512 512" class="cr-footer__nav-item-icon" height="1em" width="1em"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1715,7 +2304,7 @@
                                     </path>
                                 </svg><span class="">Wallet</span></a></li>
                         <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link"
-                                id="navItem-Account-2" href="/account"><svg stroke="currentColor" fill="currentColor"
+                                id="navItem-Account-2" href="account.html"><svg stroke="currentColor" fill="currentColor"
                                     stroke-width="0" viewBox="0 0 448 512" class="cr-footer__nav-item-icon" height="1em"
                                     width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1726,7 +2315,10 @@
                 </nav>
             </div>
         </main>
+
     </div>
+
+
     <script>!function (o) { function e(e) { for (var t, r, c = e[0], n = e[1], f = e[2], d = 0, a = []; d < c.length; d++)r = c[d], s[r] && a.push(s[r][0]), s[r] = 0; for (t in n) Object.prototype.hasOwnProperty.call(n, t) && (o[t] = n[t]); for (b && b(e); a.length;)a.shift()(); return i.push.apply(i, f || []), u() } function u() { for (var e, t = 0; t < i.length; t++) { for (var r = i[t], c = !0, n = 1; n < r.length; n++) { var f = r[n]; 0 !== s[f] && (c = !1) } c && (i.splice(t--, 1), e = p(p.s = r[0])) } return e } var r = {}, l = { 2: 0 }, s = { 2: 0 }, i = []; function p(e) { if (r[e]) return r[e].exports; var t = r[e] = { i: e, l: !1, exports: {} }; return o[e].call(t.exports, t, t.exports, p), t.l = !0, t.exports } p.e = function (i) { var e = []; l[i] ? e.push(l[i]) : 0 !== l[i] && { 23: 1 }[i] && e.push(l[i] = new Promise(function (e, c) { for (var t = "static/css/" + ({}[i] || i) + "." + { 0: "31d6cfe0", 4: "31d6cfe0", 5: "31d6cfe0", 6: "31d6cfe0", 7: "31d6cfe0", 8: "31d6cfe0", 9: "31d6cfe0", 10: "31d6cfe0", 11: "31d6cfe0", 12: "31d6cfe0", 13: "31d6cfe0", 14: "31d6cfe0", 15: "31d6cfe0", 16: "31d6cfe0", 17: "31d6cfe0", 18: "31d6cfe0", 19: "31d6cfe0", 20: "31d6cfe0", 21: "31d6cfe0", 22: "31d6cfe0", 23: "8148ad87", 24: "31d6cfe0", 25: "31d6cfe0", 26: "31d6cfe0", 27: "31d6cfe0", 28: "31d6cfe0", 29: "31d6cfe0", 30: "31d6cfe0", 31: "31d6cfe0", 32: "31d6cfe0", 33: "31d6cfe0", 34: "31d6cfe0", 35: "31d6cfe0", 36: "31d6cfe0", 37: "31d6cfe0", 38: "31d6cfe0", 39: "31d6cfe0", 40: "31d6cfe0", 41: "31d6cfe0", 42: "31d6cfe0", 43: "31d6cfe0", 44: "31d6cfe0", 45: "31d6cfe0", 46: "31d6cfe0", 47: "31d6cfe0", 48: "31d6cfe0", 49: "31d6cfe0" }[i] + ".chunk.css", n = p.p + t, r = document.getElementsByTagName("link"), f = 0; f < r.length; f++) { var d = (o = r[f]).getAttribute("data-href") || o.getAttribute("href"); if ("stylesheet" === o.rel && (d === t || d === n)) return e() } var a = document.getElementsByTagName("style"); for (f = 0; f < a.length; f++) { var o; if ((d = (o = a[f]).getAttribute("data-href")) === t || d === n) return e() } var u = document.createElement("link"); u.rel = "stylesheet", u.type = "text/css", u.onload = e, u.onerror = function (e) { var t = e && e.target && e.target.src || n, r = new Error("Loading CSS chunk " + i + " failed.\n(" + t + ")"); r.request = t, delete l[i], u.parentNode.removeChild(u), c(r) }, u.href = n, document.getElementsByTagName("head")[0].appendChild(u) }).then(function () { l[i] = 0 })); var r = s[i]; if (0 !== r) if (r) e.push(r[2]); else { var t = new Promise(function (e, t) { r = s[i] = [e, t] }); e.push(r[2] = t); var c, f = document.createElement("script"); f.charset = "utf-8", f.timeout = 120, p.nc && f.setAttribute("nonce", p.nc), f.src = p.p + "static/js/" + ({}[i] || i) + "." + { 0: "7811388d", 4: "e7618d7f", 5: "13b316ad", 6: "4da4f0a3", 7: "b0d299b1", 8: "9187cb60", 9: "4b482165", 10: "0a1de3ae", 11: "74e6eaac", 12: "a8901142", 13: "89c9fd33", 14: "6f1b5c80", 15: "d1e99bf3", 16: "4b7f2caa", 17: "70f2ab12", 18: "8339a0ea", 19: "48dd46b3", 20: "41eabea5", 21: "97dbc8e7", 22: "0535e8d0", 23: "0188f3c3", 24: "35fc391f", 25: "cc75836a", 26: "a2899fc3", 27: "71e40724", 28: "d99ae6e7", 29: "e4c9292b", 30: "e8ae9eeb", 31: "ffccdf8c", 32: "57014de1", 33: "27117d74", 34: "2f258f19", 35: "c2fa2dd5", 36: "355febba", 37: "cb45c100", 38: "efec45d8", 39: "a8cb08b4", 40: "93896c8d", 41: "505ed372", 42: "e569bf63", 43: "62c25419", 44: "4a62ea78", 45: "f82131ed", 46: "f91d7e7d", 47: "46a823d8", 48: "4ea09169", 49: "5b919ddb" }[i] + ".chunk.js", c = function (e) { f.onerror = f.onload = null, clearTimeout(d); var t = s[i]; if (0 !== t) { if (t) { var r = e && ("load" === e.type ? "missing" : e.type), c = e && e.target && e.target.src, n = new Error("Loading chunk " + i + " failed.\n(" + r + ": " + c + ")"); n.type = r, n.request = c, t[1](n) } s[i] = void 0 } }; var d = setTimeout(function () { c({ type: "timeout", target: f }) }, 12e4); f.onerror = f.onload = c, document.head.appendChild(f) } return Promise.all(e) }, p.m = o, p.c = r, p.d = function (e, t, r) { p.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, p.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, p.t = function (t, e) { if (1 & e && (t = p(t)), 8 & e) return t; if (4 & e && "object" == typeof t && t && t.__esModule) return t; var r = Object.create(null); if (p.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var c in t) p.d(r, c, function (e) { return t[e] }.bind(null, c)); return r }, p.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return p.d(t, "a", t), t }, p.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, p.p = "/", p.oe = function (e) { throw console.error(e), e }; var t = window.webpackJsonp = window.webpackJsonp || [], c = t.push.bind(t); t.push = e, t = t.slice(); for (var n = 0; n < t.length; n++)e(t[n]); var b = c; u() }([])</script>
     <script src="js/chunk10.js"></script>
     <!-- <script src="js/main.js"></script> -->

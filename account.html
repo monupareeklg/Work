@@ -5,6 +5,10 @@
     <title>Google Clubs</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style id="erd_scroll_detection_scrollbar_style">
         /* Created by the element-resize-detector library. */
         .erd_scroll_detection_container>div::-webkit-scrollbar {
@@ -1199,6 +1203,50 @@
 
 <body data-new-gr-c-s-check-loaded="14.1012.0" data-gr-ext-installed="" class="" style=""><noscript>You need to enable
         JavaScript to run this app.</noscript>
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModalChangeUSer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Change User Info</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container" style="text-align: center;">
+                        <div>
+                            <img src="img/user.png" alt="" style="height: 200px;width: 200px;border: 1px dashed;">
+                            <div> <button class="btn btn-success" style="    width: 150px;border-radius: 20px;margin-top: 2%;">Avatar</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usr" value="member" style="margin-top: 2%;">
+                      </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="background: #9C27B0; border-color: #9C27B0;">OK</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="background: #999999; border-color: #999999;">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div id="root">
         <main class="cr-app bg-light" style="position: relative;">
             <div class="cr-content container-fluid"><a href="https://t.me/googleclubsin"
@@ -1215,8 +1263,8 @@
                             <div class="mt-2">
                                 <div class="mr-3"
                                     style="float: left; overflow: hidden; width: 50px; height: 50px; border-radius: 50px; background-color: rgb(66, 66, 66);">
-                                    <img src="img/user.png"></div><span class="mt-2"
-                                    style="font-weight: 200;">Nickname: member</span><br><span
+                                    <img src="img/user.png">
+                                </div><span class="mt-2" style="font-weight: 200;">Nickname: member</span><br><span
                                     style="font-weight: 200;">Referral Code: 12615</span>
                             </div>
                             <div style="clear: both; padding: 0px 12px; font-size: 1.4rem;">Phone: 8209775395</div>
@@ -1224,10 +1272,11 @@
                             </div>
                             <div style="padding: 0px 12px;"><button
                                     class="MuiButtonBase-root MuiButton-root MuiButton-text jss292 jss295" tabindex="0"
-                                    type="button"><span class="MuiButton-label">Recharge</span><span
+                                    type="button"><a href="wallet.html" style="color: white;text-decoration: none;"><span class="MuiButton-label">Recharge</span></a><span
                                         class="MuiTouchRipple-root"></span></button>&nbsp;<button
                                     class="MuiButtonBase-root MuiButton-root MuiButton-text jss292 jss297" tabindex="0"
-                                    type="button"><span class="MuiButton-label">Change User Info</span><span
+                                    type="button"><span class="MuiButton-label" data-toggle="modal"
+                                        data-target="#myModalChangeUSer">Change User Info</span><span
                                         class="MuiTouchRipple-root"></span></button></div>
                         </div>
                     </div>
@@ -1239,21 +1288,21 @@
                                 <path fill-rule="evenodd"
                                     d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4z">
                                 </path>
-                            </svg><br><span><b>Promotion</b></span></div>
+                            </svg><br><a href="promotion.html" style="color: black; text-decoration: none;"><span><b>Promotion</b></span></a></div>
                         <div class="account-item col-4 col-md-4 col-lg-4 col-xl-4"><svg stroke="currentColor"
                                 fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M98.398 21.146a17.092 17.092 0 0 0-4.636.521c-20.49 5.262-33.163 20.63-36.116 38.649-2.952 18.019 2.168 38.346 12.676 58.193 20.695 39.086 63.262 77.08 117.852 85.85-5.61-6.72-11.05-14.246-16.274-22.375-39.008-12.57-70.021-42.344-85.67-71.899-9.206-17.387-12.846-34.491-10.82-46.857C77.437 50.862 83.482 42.89 98.238 39.1c.065-.017.068-.034.092-.053-.065-.143.105-.08 0 0 .022.049.061.11.176.217.527.493 1.689 2.24 2.207 5.14 1.036 5.804-.413 15.593-8.135 25.68l14.293 10.942c10.418-13.61 13.65-28.086 11.56-39.785-1.044-5.85-3.396-11.165-7.628-15.124-3.174-2.969-7.747-4.868-12.405-4.972zm315.204 0c-4.658.104-9.23 2.003-12.405 4.972-4.232 3.96-6.584 9.274-7.629 15.124-2.089 11.699 1.143 26.174 11.56 39.785l14.294-10.942c-7.722-10.087-9.171-19.876-8.135-25.68.518-2.9 1.68-4.647 2.207-5.14a.695.695 0 0 0 .176-.217c-.105-.08.065-.143 0 0 .024.019.027.036.092.053 14.756 3.79 20.801 11.76 22.828 24.127 2.026 12.366-1.614 29.47-10.82 46.857-15.649 29.555-46.662 59.33-85.67 71.899-5.223 8.129-10.665 15.655-16.274 22.375 54.59-8.77 97.157-46.764 117.852-85.85 10.508-19.847 15.628-40.174 12.676-58.193-2.953-18.02-15.626-33.387-36.116-38.649a17.092 17.092 0 0 0-4.636-.521zm-276.166 7.713c2.146 36.533 16.76 83.07 36.537 120.824 10.707 20.442 22.876 38.334 34.761 50.685C220.62 212.72 232 218.858 240 218.858h32c8 0 19.38-6.138 31.266-18.49 11.885-12.351 24.054-30.243 34.761-50.685 19.777-37.755 34.39-84.29 36.537-120.824H137.436zm95.564 208v16h46v-16h-46zm6.445 34c-2.458 25.967-12.796 57.873-24.437 76h81.984c-11.64-18.127-21.979-50.033-24.437-76h-33.11zm-38.445 94v14h110v-14H201zm-32 32v94h174v-94H169zm23 23h128v48H192v-48z">
                                 </path>
-                            </svg><br><span>Game Records</span></div>
+                            </svg><br><a href="game-records.html" style="color: black; text-decoration: none;"><span>Game Records</span></a></div>
                         <div class="account-item col-4 col-md-4 col-lg-4 col-xl-4"><svg stroke="currentColor"
                                 fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V256H0v176zm192-68c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-40zm-128 0c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM576 80v48H0V80c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48z">
                                 </path>
-                            </svg><br><span>Bank Card</span></div>
+                            </svg><br><a href="bank.html" style="color: black; text-decoration: none;"><span>Bank Card</span></a></div>
                     </div>
                     <div class="row">
                         <div class="account-item col-4 col-md-4 col-lg-4 col-xl-4"><svg stroke="currentColor"
@@ -1262,20 +1311,21 @@
                                 <path fill-rule="evenodd"
                                     d="M7 0L0 2v6.02C0 12.69 5.31 16 7 16c1.69 0 7-3.31 7-7.98V2L7 0zM5 11l1.14-2.8a.568.568 0 0 0-.25-.59C5.33 7.25 5 6.66 5 6c0-1.09.89-2 1.98-2C8.06 4 9 4.91 9 6c0 .66-.33 1.25-.89 1.61-.19.13-.3.36-.25.59L9 11H5z">
                                 </path>
-                            </svg><br><span>Account Security</span></div>
+                            </svg><br><a href="security.html" style="color: black; text-decoration: none;"><span>Account Security</span></a></div>
                         <div class="account-item col-4 col-md-4 col-lg-4 col-xl-4"><svg stroke="currentColor"
                                 fill="currentColor" stroke-width="0" viewBox="0 0 14 16" height="1em" width="1em"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z">
                                 </path>
-                            </svg><br><span>Help Center</span></div>
+                            </svg><br><a href="support.html" style="color: black; text-decoration: none;"><span>Help Center</span></a></div>
                         <div class="account-item col-4 col-md-4 col-lg-4 col-xl-4"><svg stroke="currentColor"
                                 fill="currentColor" stroke-width="0" viewBox="0 0 16 17" height="1em" width="1em"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z">
                                 </path>
+                                <!-- Logout Button -->
                             </svg><br><span>Logout</span></div>
                     </div>
                     <div class="row">
@@ -1293,7 +1343,7 @@
                                     </path>
                                 </svg><span class="">Color</span></a></li>
                         <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link"
-                                id="navItem-Wallet-1" href="/wallet"><svg stroke="currentColor" fill="currentColor"
+                                id="navItem-Wallet-1" href="wallet.html"><svg stroke="currentColor" fill="currentColor"
                                     stroke-width="0" viewBox="0 0 512 512" class="cr-footer__nav-item-icon" height="1em"
                                     width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1301,7 +1351,7 @@
                                     </path>
                                 </svg><span class="">Wallet</span></a></li>
                         <li class="cr-footer__nav-item nav-item"><a class="text-uppercase nav-link active"
-                                id="navItem-Account-2" href="/account" aria-current="page"><svg stroke="currentColor"
+                                id="navItem-Account-2" href="account.html" aria-current="page"><svg stroke="currentColor"
                                     fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
                                     class="cr-footer__nav-item-icon" height="1em" width="1em"
                                     xmlns="http://www.w3.org/2000/svg">
